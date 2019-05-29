@@ -10,7 +10,7 @@ namespace AsyncRefactoringBug
 
     public class SomeOtherRequestHandler: IRequestHandler<SomeOtherRequest>
     {
-        public Task<Unit> Handle(SomeOtherRequest request, CancellationToken cancellationToken)
+        public Task<Unit> HandleAsync(SomeOtherRequest request, CancellationToken cancellationToken)
         {
             return Task.FromResult(Unit.Value);
         }

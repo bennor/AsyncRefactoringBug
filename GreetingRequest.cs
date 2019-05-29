@@ -16,9 +16,9 @@ namespace AsyncRefactoringBug
 
     public class GreetingRequestHandler : IRequestHandler<GreetingRequest, string>
     {
-        public Task<string> Handle(GreetingRequest request, CancellationToken cancellationToken)
+        public async Task<string> HandleAsync(GreetingRequest request, CancellationToken cancellationToken)
         {
-            return GetGreeting(request.Name);
+            return await GetGreeting(request.Name);
         }
 
         public static Task<string> GetGreeting(string name)
